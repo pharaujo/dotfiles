@@ -1,0 +1,35 @@
+[user]
+    name = Pedro Araújo
+    email = phcrva@gmail.com
+
+[core]
+    editor = vim
+
+[alias]
+    gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    glb = log --graph --decorate --pretty=oneline --abbrev-commit
+    b = branch
+    d = diff
+    dc = diff --cached
+    st = status -sb
+    ci = commit
+    co = checkout
+    serve = daemon --reuseaddr --base-path=. --export-all --verbose
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = red
+
+#[branch]
+#    autosetuprebase = always
+
+[sendemail]
+    smtpserver = smtp.gmail.com
+    smtpserverport = 587
+    smtpencryption = tls
+    smtpuser = phcrva@gmail.com
+    smtppass = ********

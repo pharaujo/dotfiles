@@ -1,0 +1,16 @@
+[ui]
+username = Pedro Araújo <phcrva@gmail.com>
+
+[pager]
+pager = LESS='FSRX' less
+
+[extensions]
+bookmarks =
+color =
+graphlog =
+mq =
+pager =
+progress =
+rebase =
+record =
+zeroconf =
