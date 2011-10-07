@@ -49,14 +49,27 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function get_scm_branch {
+    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1)/')
+    if [ -n "$git_branch"  ]; then
+        echo $git_branch
+        return 0
+    fi
+    hg_branch=$(hg branch 2> /dev/null | sed -e 's/\(.*\)/(hg:\1)/')
+    if [ -n "$hg_branch" ]; then
+        echo $hg_branch
+        return 0
+    fi
+}
+
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' #default ubuntu PS1
     #PS1='${debian_chroot:+($debian_chroot)}\[\e]2;\u@\H \w\a\e[32;1m\]>\[\e[0m\] ' #info on titlebar
     #PS1='$(if [ $? = 0 ]; then echo \[\e[32m\]^_^\[\e[0m\]; else echo \[\e[31m\]O_O\[\e[0m\]; fi)[\u@\h:\w]\\$ ' # exit status emoticons
     if [[ ${EUID} == 0 ]] ; then
-        PS1='\[\033[0;33m\][\!] \[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] ' # gentoo PS1 + history number
+        PS1='\[\033[0;33m\][\!]\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] ' # based on gentoo PS1
     else
-        PS1='\[\033[0;33m\][\!] \[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+        PS1='\[\033[0;33m\][\!]\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\[\033[0;32m\]$(get_scm_branch)\[\033[01;34m\]\$\[\033[00m\] '
     fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
