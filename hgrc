@@ -4,6 +4,9 @@ username = Pedro Araújo <phcrva@gmail.com>
 [pager]
 pager = LESS='FSRX' less
 
+[diff]
+git = true
+
 [extensions]
 bookmarks =
 color =
