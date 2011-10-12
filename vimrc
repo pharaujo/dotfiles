@@ -29,6 +29,7 @@ set background=dark
 if version >= 703
     set colorcolumn=80     " Vertical line on column 80
     set undofile           " Persistent undo history
+    set undodir=~/.vim/backup
 endif
 
 if !exists("syntax_on")
