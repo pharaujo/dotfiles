@@ -60,6 +60,16 @@ function get_scm_branch {
         echo $hg_branch
         return 0
     fi
+    if [[ -d .svn ]]; then
+        local _svn_info=$(svn info 2> /dev/null)
+        local _svn_root=$(echo "$_svn_info" | sed -ne 's#^Repository Root: ##p')
+        #local _svn_url=$(echo "$_svn_info" | sed -ne 's#^URL: ##p')
+        #local _svn_branch=$(echo $_svn_url | sed -e 's#^'"$_svn_root"'##g')
+        local _svn_base=$(basename $_svn_root)
+        local _svn_rev=$(echo "$_svn_info" | sed -ne '/^Revision: \([0-9]*\).*$/s//\1/p')
+        echo "(svn:$_svn_base@$_svn_rev)"
+        return 0
+    fi
 }
 
 if [ "$color_prompt" = yes ]; then
