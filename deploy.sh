@@ -6,9 +6,9 @@ WD=$(pwd)
 dotfiles=(bashrc vimrc gitconfig hgrc)
 
 function regular_file {
-    [[ -e $1 ]] || return 1
-    [[ $(stat -c %F $1) = "regular file" ]]
-    return $?
+    [[ -f $1 ]] || return 1
+    [[ -h $1 ]] && return 1
+    return 0
 }
 
 function deployed_file {
