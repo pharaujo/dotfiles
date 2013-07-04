@@ -52,3 +52,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "nor
 " Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
 
+" use tabwidth 2 in ruby files
+au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
+
