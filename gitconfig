@@ -33,3 +33,6 @@
     smtpencryption = tls
     smtpuser = phcrva@gmail.com
     smtppass = ********
+
+[push]
+    default = simple
