@@ -1,3 +1,5 @@
+# vi: set ft=sh :
+
 function get_scm_branch {
     git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1)/')
     if [ -n "$git_branch"  ]; then
