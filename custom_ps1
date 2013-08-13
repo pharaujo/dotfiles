@@ -1,12 +1,12 @@
 # vi: set ft=sh :
 
 function get_scm_branch {
-    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1)/')
+    local git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1)/')
     if [ -n "$git_branch"  ]; then
         echo $git_branch
         return 0
     fi
-    hg_branch=$(hg branch 2> /dev/null | sed -e 's/\(.*\)/(hg:\1)/')
+    local hg_branch=$(hg branch 2> /dev/null | sed -e 's/\(.*\)/(hg:\1)/')
     if [ -n "$hg_branch" ]; then
         echo $hg_branch
         return 0
