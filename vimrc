@@ -50,6 +50,11 @@ autocmd BufWritePre * :%s/\s\+$//e "clean extra whitespace on write
 " Retore last edit location when opening a file
 autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif
 
+" always jump to the top of commit messages
+" NOTE: mercurial and bazaar use temporary files, so this isn't necessary
+au BufReadPost svn-commit*.tmp exe "normal! gg"
+au BufReadPost COMMIT_EDITMSG* exe "normal! gg"
+
 " Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
 
