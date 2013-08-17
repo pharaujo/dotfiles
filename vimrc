@@ -25,6 +25,7 @@ set wildmenu           " Enhanced command-line completion.
 set wildmode=list:longest " Show all alternatives and complete furtherest possible.
 set completeopt=menuone,longest,preview " Better completion menu
 set background=dark
+set nrformats-=octal   " Remove octal numbering
 
 if version >= 703
     set colorcolumn=73,80  " Vertical line on column 80
