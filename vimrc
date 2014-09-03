@@ -31,6 +31,7 @@ if version >= 703
     set colorcolumn=73,80  " Vertical line on column 80
     set undofile           " Persistent undo history
     set undodir=~/.vim/backup
+    set cryptmethod=blowfish " sane encryption for :X
 endif
 
 if !exists("syntax_on")
