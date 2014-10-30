@@ -3,10 +3,10 @@ set -e
 
 STASH=~/.dotfiles_stash
 WD=$(pwd)
-dotfiles=(custom_ps1 vimrc gitconfig hgrc)
+dotfiles=(custom_ps1 vim gitconfig hgrc)
 
 function regular_file {
-    [[ -f $1 ]] || return 1
+    [[ -e $1 ]] || return 1
     [[ -h $1 ]] && return 1
     return 0
 }
