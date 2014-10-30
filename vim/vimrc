@@ -83,3 +83,6 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
+
+" just check for the VCS I use
+let g:signify_vcs_list = [ 'git', 'svn', 'perforce', 'hg' ]
