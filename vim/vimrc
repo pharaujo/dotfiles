@@ -68,3 +68,5 @@ let c_space_errors=1
 " use tabwidth 2 in ruby files
 au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 
+" don't hide json syntax
+let g:vim_json_syntax_conceal = 0
