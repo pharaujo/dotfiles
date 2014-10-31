@@ -68,6 +68,11 @@ let c_space_errors=1
 " use tabwidth 2 in ruby files
 au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 
+" https://github.com/altercation/vim-colors-solarized
+let g:solarized_termcolors=256
+colorscheme solarized
+let g:solarized_diffmode="high"
+
 " don't hide json syntax
 let g:vim_json_syntax_conceal = 0
 
