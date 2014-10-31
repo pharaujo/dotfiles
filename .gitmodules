@@ -19,3 +19,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vim-syntax-vcl"]
+	path = vim/bundle/vim-syntax-vcl
+	url = https://github.com/protochron/vim-syntax-vcl
