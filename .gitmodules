@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-syntax-vcl"]
 	path = vim/bundle/vim-syntax-vcl
 	url = https://github.com/protochron/vim-syntax-vcl
+[submodule "vim/bundle/vim-golang"]
+	path = vim/bundle/vim-golang
+	url = https://github.com/jnwhiteh/vim-golang.git
