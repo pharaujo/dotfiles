@@ -46,27 +46,31 @@ endif
 
 filetype plugin indent on  " Enables filetype specific stuff
 
+augroup vimrc
+  autocmd!
+augroup END
+
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyo,.pyc,.rbc
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-autocmd BufWritePre * :%s/\s\+$//e "clean extra whitespace on write
+autocmd vimrc BufWritePre * :%s/\s\+$//e "clean extra whitespace on write
 
 " Retore last edit location when opening a file
-autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif
+autocmd vimrc BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " always jump to the top of commit messages
 " NOTE: mercurial and bazaar use temporary files, so this isn't necessary
-au BufReadPost svn-commit*.tmp exe "normal! gg"
-au BufReadPost COMMIT_EDITMSG* exe "normal! gg"
+autocmd vimrc BufReadPost svn-commit*.tmp exe "normal! gg"
+autocmd vimrc BufReadPost COMMIT_EDITMSG* exe "normal! gg"
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
 
 " use tabwidth 2 in ruby files
-au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
+autocmd vimrc FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 
 " https://github.com/altercation/vim-colors-solarized
 let g:solarized_termcolors=256
@@ -84,8 +88,8 @@ if ! has('gui_running')
   set ttimeoutlen=10
   augroup FastEscape
     autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
+    autocmd InsertEnter * set timeoutlen=0
+    autocmd InsertLeave * set timeoutlen=1000
   augroup END
 endif
 
