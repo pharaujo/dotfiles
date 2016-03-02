@@ -1,5 +1,9 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if command -v brew >/dev/null 2>&1 ; then
+  if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+    source "$(brew --prefix)/etc/bash_completion"
+  fi
+  if [ -f "$(brew --prefix)/etc/grc.bashrc" ]; then
+    source "$(brew --prefix)/etc/grc.bashrc"
 fi
 
 . ~/.custom_ps1
