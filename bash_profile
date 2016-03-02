@@ -19,3 +19,7 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%s '
+export HISTSIZE=50000
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
