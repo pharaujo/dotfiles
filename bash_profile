@@ -4,6 +4,7 @@ if command -v brew >/dev/null 2>&1 ; then
   fi
   if [ -f "$(brew --prefix)/etc/grc.bashrc" ]; then
     source "$(brew --prefix)/etc/grc.bashrc"
+  fi
 fi
 
 . ~/.custom_ps1
