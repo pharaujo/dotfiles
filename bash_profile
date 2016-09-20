@@ -1,3 +1,6 @@
+export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
+
 if command -v brew >/dev/null 2>&1 ; then
   if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
     source "$(brew --prefix)/etc/bash_completion"
@@ -10,8 +13,6 @@ fi
 . ~/.custom_ps1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export PATH="~/bin:$PATH"
 
 export LC_CTYPE="UTF-8"
 export EDITOR="vim"
