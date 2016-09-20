@@ -21,7 +21,11 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
-export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%s '
-export HISTSIZE=50000
+# Record each line as it gets issued
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
+export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=99999
+export HISTCONTROL=ignorespace
+export HISTIGNORE="exit:ls:bg:fg:history:clear"
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
