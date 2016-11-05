@@ -21,6 +21,8 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+export GPG_TTY=$(tty)
+
 # Record each line as it gets issued
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 export HISTTIMEFORMAT='%F %T '
