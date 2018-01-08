@@ -9,7 +9,7 @@ if command -v brew >/dev/null 2>&1 ; then
     source "$(brew --prefix)/etc/profile.d/autojump.sh"
   fi
   if [[ -s $(brew --prefix)/bin/lesspipe.sh ]]; then
-    export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+    export LESSOPEN="| $(brew --prefix)/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
   fi
 fi
 
