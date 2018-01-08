@@ -5,8 +5,11 @@ if command -v brew >/dev/null 2>&1 ; then
   if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
     source "$(brew --prefix)/etc/bash_completion"
   fi
-  if [ -f "$(brew --prefix)/etc/grc.bashrc" ]; then
-    source "$(brew --prefix)/etc/grc.bashrc"
+  if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
+    source "$(brew --prefix)/etc/profile.d/autojump.sh"
+  fi
+  if [[ -s $(brew --prefix)/bin/lesspipe.sh ]]; then
+    export LESSOPEN='| /usr/local/bin/lesspipe.sh %s'
   fi
 fi
 
