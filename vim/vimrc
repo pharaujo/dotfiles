@@ -97,3 +97,9 @@ endif
 
 " just check for the VCS I use
 let g:signify_vcs_list = [ 'git', 'svn', 'perforce', 'hg' ]
+
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=25
