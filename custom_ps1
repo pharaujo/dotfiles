@@ -2,8 +2,12 @@
 
 function get_scm_branch {
     local git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1)/')
-    if [ -n "$git_branch"  ]; then
-        echo $git_branch
+    if [ -n "$git_branch" ]; then
+        if [[ -x $(brew --prefix)/bin/git-radar ]]; then
+            echo -e $($(brew --prefix)/bin/git-radar --bash)
+        else
+            echo $git_branch
+        fi
         return 0
     fi
     local hg_branch=$(hg branch 2> /dev/null | sed -e 's/\(.*\)/(hg:\1)/')
