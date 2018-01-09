@@ -28,6 +28,9 @@
 #[branch]
 #    autosetuprebase = always
 
+[log]
+    showsignature = true
+
 [sendemail]
     smtpserver = smtp.gmail.com
     smtpserverport = 587
