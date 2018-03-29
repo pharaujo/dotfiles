@@ -1,6 +1,27 @@
-export PATH="$HOME/bin:$PATH"
-export PATH="$PATH:$HOME/.cargo/bin"
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bashrc" ]; then
+    source "$HOME/.bashrc"
+  fi
+fi
 
+function _linux() { [[ $(uname -s) == Linux* ]]; }
+function _macosx() { [[ $(uname -s) == Darwin* ]]; }
+
+#### path changes
+export PATH="$HOME/.cargo/bin:$PATH"
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/.cargo/bin" ] ; then
+  PATH="$PATH:$HOME/.cargo/bin"
+fi
+if [ -d "/home/linuxbrew/.linuxbrew/" ] ; then
+  PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+fi
+
+#### sources
 if command -v brew >/dev/null 2>&1 ; then
   if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
     source "$(brew --prefix)/etc/bash_completion"
@@ -8,20 +29,23 @@ if command -v brew >/dev/null 2>&1 ; then
   if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
     source "$(brew --prefix)/etc/profile.d/autojump.sh"
   fi
+  if [[ -s $(brew --prefix)/bin/fasd ]]; then
+      eval "$($(brew --prefix)/bin/fasd --init auto)"
+  fi
   if [[ -s $(brew --prefix)/bin/lesspipe.sh ]]; then
     export LESSOPEN="| $(brew --prefix)/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
   fi
 fi
-
-. ~/.custom_ps1
-
+source "$HOME/.custom_ps1"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export LC_CTYPE="UTF-8"
+#### exports
+_macosx && export LC_CTYPE="UTF-8"
 export EDITOR="vim"
+export PATH
 
 export CLICOLOR=1
-export GREP_OPTIONS='--color=auto'
+_macosx && export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
 export GPG_TTY=$(tty)
