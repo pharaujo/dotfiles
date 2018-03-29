@@ -1,6 +1,11 @@
 [user]
     name = Pedro Araujo
-    email = phcrva@gmail.com
+
+[includeIf "gitdir:~/work/"]
+    path = .gitconfig-work
+[includeIf "gitdir:~/personal/"]
+    path = .gitconfig-personal
+
 
 [core]
     editor = vim
