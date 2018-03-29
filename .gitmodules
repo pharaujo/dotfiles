@@ -1,36 +1,36 @@
 [submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
+	path = .vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/vim-json"]
-	path = vim/bundle/vim-json
+	path = .vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json
 [submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
 [submodule "vim/bundle/vim-signify"]
-	path = vim/bundle/vim-signify
+	path = .vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify
 [submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
+	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
+	path = .vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
+	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/vim-syntax-vcl"]
-	path = vim/bundle/vim-syntax-vcl
+	path = .vim/bundle/vim-syntax-vcl
 	url = https://github.com/protochron/vim-syntax-vcl
 [submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
+	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-go"]
-	path = vim/bundle/vim-go
+	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go
 [submodule "vim/bundle/rust.vim"]
-	path = vim/bundle/rust.vim
+	path = .vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim/bundle/vim-toml"]
-	path = vim/bundle/vim-toml
+	path = .vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml
