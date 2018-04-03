@@ -5,6 +5,8 @@
     path = .gitconfig-work
 [includeIf "gitdir:~/personal/"]
     path = .gitconfig-personal
+[includeIf "gitdir:~/.yadm/"]
+    path = .gitconfig-personal
 
 
 [core]
