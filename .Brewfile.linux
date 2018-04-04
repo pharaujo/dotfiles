@@ -1,0 +1,34 @@
+# up-to-date unix
+brew "bash"
+brew "bash-completion"
+brew "git"
+brew "tree"
+brew "vim"
+
+# better than grep
+brew "ack"
+brew "ripgrep"
+brew "the_silver_searcher"
+
+# better linux
+brew "fasd"
+brew "fzf"
+
+# dev
+brew "go"
+brew "icdiff"
+brew "jq"
+brew "pre-commit"
+brew "shellcheck"
+brew "socat"
+brew "tmux"
+brew "vagrant-completion"
+
+# git prompt
+tap "michaeldfallen/formula"
+brew "git-radar"
+
+# misc
+brew "unrar"
+brew "yadm"
+brew "xz"
