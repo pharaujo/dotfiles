@@ -9,6 +9,7 @@ brew "openssl"
 brew "ssh-copy-id"
 brew "tree"
 brew "vim"
+brew "gnupg"
 
 # better than grep
 brew "ack"
@@ -33,6 +34,7 @@ cask "docker"
 cask "iterm2"
 cask "minikube"
 cask "vagrant"
+cask "virtualbox"
 
 # git prompt
 tap "michaeldfallen/formula"
