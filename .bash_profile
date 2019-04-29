@@ -24,7 +24,7 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 #### sources
-if command -v brew >/dev/null 2>&1 ; then
+if command -v brew >/dev/null 2>&1; then
   if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
     source "$(brew --prefix)/etc/bash_completion"
   fi
@@ -32,7 +32,7 @@ if command -v brew >/dev/null 2>&1 ; then
     source "$(brew --prefix)/etc/profile.d/autojump.sh"
   fi
   if [[ -s $(brew --prefix)/bin/fasd ]]; then
-      eval "$($(brew --prefix)/bin/fasd --init auto)"
+    eval "$($(brew --prefix)/bin/fasd --init auto)"
   fi
   if [[ -s $(brew --prefix)/bin/lesspipe.sh ]]; then
     export LESSOPEN="| $(brew --prefix)/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
