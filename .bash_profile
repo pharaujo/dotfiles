@@ -10,15 +10,17 @@ function _linux() { [[ $(uname -s) == Linux* ]]; }
 function _macosx() { [[ $(uname -s) == Darwin* ]]; }
 
 #### path changes
-export PATH="$HOME/.cargo/bin:$PATH"
-if [ -d "$HOME/bin" ] ; then
-  PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/.cargo/bin" ] ; then
-  PATH="$PATH:$HOME/.cargo/bin"
-fi
-if [ -d "/home/linuxbrew/.linuxbrew/" ] ; then
+if [ -d "/home/linuxbrew/.linuxbrew/" ]; then
   PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+fi
+if [ -d "$HOME/go/bin" ]; then
+  PATH="$HOME/go/bin:$PATH"
+fi
+if [ -d "$HOME/.cargo/bin" ]; then
+  PATH="$HOME/.cargo/bin:$PATH"
+fi
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
 fi
 
 #### sources
