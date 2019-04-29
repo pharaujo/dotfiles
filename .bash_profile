@@ -45,7 +45,7 @@ source "$HOME/.custom_ps1"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #### exports
-_macosx && export LC_CTYPE="UTF-8"
+_macosx && export LC_CTYPE="pt_PT.UTF-8"
 export EDITOR="vim"
 export PATH
 
