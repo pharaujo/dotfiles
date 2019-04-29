@@ -37,6 +37,9 @@ if command -v brew >/dev/null 2>&1 ; then
   if [[ -s $(brew --prefix)/bin/lesspipe.sh ]]; then
     export LESSOPEN="| $(brew --prefix)/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
   fi
+  if [[ -s $(brew --prefix)/opt/asdf/asdf.sh ]]; then
+    source "$(brew --prefix)/opt/asdf/asdf.sh"
+  fi
 fi
 source "$HOME/.custom_ps1"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
