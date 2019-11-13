@@ -40,6 +40,9 @@ if command -v brew >/dev/null 2>&1; then
   if [[ -s $(brew --prefix)/opt/asdf/asdf.sh ]]; then
     source "$(brew --prefix)/opt/asdf/asdf.sh"
   fi
+  if [[ -s $(brew --prefix)/bin/pyenv ]]; then
+    eval "$($(brew --prefix)/bin/pyenv init -)"
+  fi
 fi
 source "$HOME/.custom_ps1"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
