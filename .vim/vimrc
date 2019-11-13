@@ -73,6 +73,7 @@ let c_space_errors=1
 autocmd vimrc FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd vimrc FileType yaml setlocal expandtab tabstop=2 shiftwidth=2
 autocmd vimrc FileType json setlocal expandtab tabstop=2 shiftwidth=2
+autocmd vimrc FileType markdown set wrap
 
 " https://github.com/altercation/vim-colors-solarized
 let g:solarized_termcolors=256
