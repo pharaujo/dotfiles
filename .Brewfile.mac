@@ -54,7 +54,6 @@ brew "xz"
 
 # misc cask
 cask "caffeine"
-cask "cord"
 cask "evernote"
 cask "firefox"
 cask "google-chrome"
