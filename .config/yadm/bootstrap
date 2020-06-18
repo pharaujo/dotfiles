@@ -5,7 +5,7 @@
 cd "$HOME" || return
 
 echo "> Init submodules"
-yadm submodule update --recursive --init
+$HOME/yadm submodule update --recursive --init
 
 system_type=$(uname -s)
 
