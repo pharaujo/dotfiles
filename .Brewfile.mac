@@ -24,6 +24,7 @@ brew "the_silver_searcher"
 brew "fasd"
 brew "fzf"
 brew "ical-buddy"
+brew "mas"
 
 # dev
 brew "bat"
@@ -77,3 +78,10 @@ cask "visual-studio-code"
 cask "riot"
 cask "signal"
 cask "discord"
+
+# mac appstore
+mas "Amphetamine", id: 937984704
+mas "Magnet", id: 441258766
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "Tot", id: 1491071483
