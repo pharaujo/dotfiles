@@ -1,5 +1,8 @@
+tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/services"
 
 # up-to-date unix
 brew "bash"
@@ -46,6 +49,7 @@ brew "socat"
 brew "stern"
 brew "tmux"
 brew "vagrant-completion"
+brew "yq"
 cask "docker"
 cask "iterm2"
 cask "vagrant"
@@ -67,10 +71,8 @@ brew "yadm"
 brew "xz"
 
 # misc cask
-cask "evernote"
 cask "firefox"
 cask "google-chrome"
-cask "keepassxc"
 cask "keybase"
 cask "spotify"
 cask "tunnelblick"
@@ -78,6 +80,8 @@ cask "visual-studio-code"
 cask "riot"
 cask "signal"
 cask "discord"
+cask "lunar"
+cask "zulip"
 
 # mac appstore
 mas "Amphetamine", id: 937984704
