@@ -49,7 +49,7 @@ source "$HOME/.custom_ps1"
 
 #### exports
 _macosx && export LC_CTYPE="pt_PT.UTF-8"
-export EDITOR="vim"
+export EDITOR="nvim"
 export PATH
 
 export CLICOLOR=1
