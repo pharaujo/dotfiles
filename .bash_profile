@@ -35,13 +35,20 @@ if command -v brew >/dev/null 2>&1; then
     eval "$($(brew --prefix)/bin/fasd --init auto)"
   fi
   if [[ -s $(brew --prefix)/bin/lesspipe.sh ]]; then
-    export LESSOPEN="| $(brew --prefix)/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+    export LESSOPEN="| $(brew --prefix)/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1 LESS=-R
   fi
   if [[ -s $(brew --prefix)/opt/asdf/asdf.sh ]]; then
     source "$(brew --prefix)/opt/asdf/asdf.sh"
   fi
   if [[ -s $(brew --prefix)/bin/pyenv ]]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$($(brew --prefix)/bin/pyenv init --path)"
     eval "$($(brew --prefix)/bin/pyenv init -)"
+  fi
+  if [[ -s $(brew --prefix)/bin/fzf ]]; then
+    [[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.bash" 2> /dev/null
+    source "$(brew --prefix)/opt/fzf/shell/key-bindings.bash"
   fi
 fi
 source "$HOME/.custom_ps1"
@@ -59,10 +66,12 @@ export LSCOLORS=Exfxcxdxbxegedabagacad
 export GPG_TTY=$(tty)
 
 # Record each line as it gets issued
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
+export PROMPT_COMMAND="${PROMPT_COMMAND} history -a"
 export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=99999
 export HISTCONTROL=ignorespace
 export HISTIGNORE="exit:ls:bg:fg:history:clear"
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
+
+export HOMEBREW_NO_GOOGLE_ANALYTICS=1
