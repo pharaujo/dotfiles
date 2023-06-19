@@ -1,7 +1,5 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 
 # up-to-date unix
@@ -13,6 +11,8 @@ brew "git"
 brew "gnu-sed"
 brew "gnupg"
 brew "lesspipe"
+brew "make"
+brew "moreutils"
 brew "ssh-copy-id"
 brew "tree"
 brew "vim"
@@ -21,6 +21,7 @@ brew "watch"
 # new-wave unix
 brew "fd"
 brew "fzf"
+brew "neovim"
 brew "ripgrep"
 
 # better mac
@@ -29,13 +30,20 @@ brew "ical-buddy"
 brew "mas"
 
 # dev
+brew "awscli"
 brew "bat"
 brew "brew-pip"
+brew "crane"
+brew "difftastic"
+brew "docker-completion"
 brew "dpkg"
 brew "go"
 brew "icdiff"
 brew "jq"
+brew "jsonnet-bundler"
 brew "kubernetes-cli"
+brew "kustomize"
+brew "logcli"
 brew "midnight-commander"
 brew "minikube"
 brew "pre-commit"
@@ -45,13 +53,19 @@ brew "shellcheck"
 brew "shfmt"
 brew "socat"
 brew "stern"
+brew "tektoncd-cli"
+brew "teleport"
+brew "terraform"
 brew "tmux"
 brew "vagrant-completion"
 brew "yq"
+cask "aws-vpn-client"
 cask "docker"
+cask "finch"
 cask "iterm2"
 cask "vagrant"
 cask "virtualbox"
+cask "virtualbox-extension-pack"
 
 # git prompt
 tap "michaeldfallen/formula"
@@ -64,20 +78,21 @@ cask "qlstephen"
 cask "suspicious-package"
 
 # misc
-brew "yadm"
+brew "gopass"
 brew "xz"
+brew "yadm"
 
 # misc cask
+cask "1password"
+cask "discord"
+cask "element"
 cask "firefox"
 cask "google-chrome"
 cask "keybase"
-cask "spotify"
-cask "tunnelblick"
-cask "visual-studio-code"
-cask "element"
-cask "signal"
-cask "discord"
 cask "lunar"
+cask "obsidian"
+cask "visual-studio-code"
+cask "zoom"
 cask "zulip"
 
 # mac appstore
@@ -86,3 +101,11 @@ mas "Magnet", id: 441258766
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "Tot", id: 1491071483
+
+# vscode plugins
+vscode "Grafana.vscode-jsonnet"
+vscode "eamodio.gitlens"
+vscode "golang.go"
+vscode "redhat.vscode-yaml"
+vscode "tsandall.opa"
+vscode "zxh404.vscode-proto3"
