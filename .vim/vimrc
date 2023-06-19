@@ -85,7 +85,7 @@ let g:vim_json_syntax_conceal = 0
 
 " snazzy statusbar
 set laststatus=2
-let g:airline_powerline_fonts = 1  " don't forget to change term font to a Powerline-enabled font
+"let g:airline_powerline_fonts = 1  " don't forget to change term font to a Powerline-enabled font
 " Workaround for leaving insert mode delay with statusline active
 if ! has('gui_running')
   set ttimeoutlen=10
