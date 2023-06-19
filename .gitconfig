@@ -50,6 +50,9 @@
 [difftool "icdiff"]
     cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 
+[difftool "difft"]
+    cmd = difft $LOCAL $REMOTE
+
 [push]
     default = simple
 [pull]
