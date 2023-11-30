@@ -13,6 +13,9 @@ function _macosx() { [[ $(uname -s) == Darwin* ]]; }
 if [ -d "/home/linuxbrew/.linuxbrew/" ]; then
   PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 fi
+if [ -d "$HOME/.rd/bin" ]; then
+  PATH="$PATH:$HOME/.rd/bin"
+fi
 if [ -d "$HOME/go/bin" ]; then
   PATH="$HOME/go/bin:$PATH"
 fi
@@ -26,7 +29,7 @@ fi
 #### sources
 if command -v brew >/dev/null 2>&1; then
   if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-    source "$(brew --prefix)/etc/bash_completion"
+    [[ $- == *i* ]] && source "$(brew --prefix)/etc/bash_completion"
   fi
   if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
     source "$(brew --prefix)/etc/profile.d/autojump.sh"
@@ -51,8 +54,10 @@ if command -v brew >/dev/null 2>&1; then
     source "$(brew --prefix)/opt/fzf/shell/key-bindings.bash"
   fi
 fi
+if command -v docker >/dev/null 2>&1; then
+  [[ $- == *i* ]] && source <(docker completion bash)
+fi
 source "$HOME/.custom_ps1"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #### exports
 _macosx && export LC_CTYPE="pt_PT.UTF-8"
@@ -73,5 +78,3 @@ export HISTCONTROL=ignorespace
 export HISTIGNORE="exit:ls:bg:fg:history:clear"
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
-
-export HOMEBREW_NO_GOOGLE_ANALYTICS=1
