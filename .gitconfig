@@ -38,7 +38,7 @@
 #    autosetuprebase = always
 
 [log]
-    showsignature = true
+   showsignature = true
 
 [sendemail]
     smtpserver = smtp.gmail.com
@@ -57,3 +57,7 @@
     default = simple
 [pull]
 	ff = only
+
+
+[url "ssh://git@github.com/saltpay/"]
+    insteadOf = https://github.com/saltpay/
