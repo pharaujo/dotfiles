@@ -26,7 +26,7 @@ brew "neovim"
 brew "ripgrep"
 
 # better mac
-brew "fasd"
+brew "fasd", args: ["HEAD"]
 brew "ical-buddy"
 brew "mas"
 
@@ -35,7 +35,7 @@ brew "awscli"
 brew "bat"
 brew "black"
 brew "conftest"
-brew "crane"
+brew "cookiecutter"
 brew "difftastic"
 brew "go"
 brew "icdiff"
@@ -51,6 +51,7 @@ brew "socat"
 brew "terraform"
 brew "tmux"
 brew "yaml-language-server"
+brew "yarn"
 brew "yj"
 brew "yq"
 cask "aws-vpn-client"
@@ -58,6 +59,8 @@ cask "finch"
 cask "iterm2"
 
 # kubernetes
+brew "cosign"
+brew "crane"
 brew "helm"
 brew "kubeconform"
 brew "kubernetes-cli"
@@ -93,16 +96,19 @@ cask "lunar"
 cask "obsidian"
 cask "rancher"
 cask "visual-studio-code"
+cask "zed"
 cask "zulip"
 
 # mac appstore
+mas "1Blocker", id: 1365531024
 mas "Amphetamine", id: 937984704
+mas "Hush", id: 1544743900
 mas "Magnet", id: 441258766
 mas "Telegram", id: 747648890
 mas "Tot", id: 1491071483
 
 # vscode plugins
-vscode "Grafana.vscode-jsonnet"
+vscode "grafana.vscode-jsonnet"
 vscode "bierner.markdown-mermaid"
 vscode "eamodio.gitlens"
 vscode "golang.go"
