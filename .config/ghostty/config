@@ -1,0 +1,3 @@
+shell-integration-features = no-cursor
+copy-on-select = true
+macos-option-as-alt = right

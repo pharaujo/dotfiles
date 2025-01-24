@@ -58,6 +58,7 @@ brew "yq"
 cask "aws-vpn-client"
 cask "finch"
 cask "iterm2"
+cask "ghostty"
 
 # kubernetes
 brew "cosign"
