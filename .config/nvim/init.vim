@@ -50,6 +50,7 @@ Plug 'google/vim-jsonnet'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'towolf/vim-helm'
+Plug 'mrjosh/helm-ls'
 call plug#end()
 
 " set termguicolors
@@ -63,6 +64,7 @@ autocmd vimrc FileType json setlocal expandtab tabstop=2 shiftwidth=2
 autocmd vimrc FileType markdown set wrap
 autocmd vimrc FileType go setlocal nolist listchars&    " don't print tabs in go files
 autocmd vimrc FileType make setlocal nolist listchars&    " don't print tabs in go files
+autocmd vimrc FileType helm LspRestart
 
 " Emulate ctrlp with fzf.vim
 nnoremap <C-p> :GFiles<Cr>
@@ -105,7 +107,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "gopls", "yamlls" }
+local servers = { "gopls", "helm_ls", "yamlls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -146,6 +148,7 @@ require'nvim-treesitter.configs'.setup {
       "go",
       "gomod",
       "hcl",
+      "helm",
       "ini",
       "jq",
       "json",
