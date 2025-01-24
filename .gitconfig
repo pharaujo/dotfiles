@@ -14,6 +14,8 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore_global
+    pager = less -F -X
+    attributesfile = ~/.gitattributes
 
 [alias]
     gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -52,6 +54,10 @@
 
 [difftool "difft"]
     cmd = difft $LOCAL $REMOTE
+
+[merge "mergiraf"]
+    name = mergiraf
+    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P
 
 [push]
     default = simple
