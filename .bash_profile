@@ -13,6 +13,9 @@ function _macosx() { [[ $(uname -s) == Darwin* ]]; }
 if [ -d "/home/linuxbrew/.linuxbrew/" ]; then
   PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 fi
+if [ -d "/opt/homebrew/" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 if [ -d "$HOME/.rd/bin" ]; then
   PATH="$PATH:$HOME/.rd/bin"
 fi
